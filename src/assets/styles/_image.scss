@@ -1,0 +1,82 @@
+@use '@/assets/styles/mixins' as *;
+/* ==================================================
+          @image
+================================================== */
+.image-component {
+  position: relative;
+  width: 100%;
+  .image-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    &.border {
+      border-width: var(--image-border-width-default);
+      border-style: var(--image-border-style-default);
+      border-color: transparent;
+      border-radius: var(--image-border-radius-default);
+      background-image: var(--image-border-color);
+      background-origin: content-box, border-box;
+      background-clip: content-box, border-box;
+      overflow: hidden;
+    }
+    &.logoBg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: var(--image-border-color-logo-bg);
+      .image-element {
+        width: 200px;
+        height: 60px;
+        background-size: contain;
+      }
+    }
+    .image-element {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      // background-position: center 0;
+      background-size: cover;
+      &.error {
+        @include line-ellipsis(2);
+        width: 80%;
+        height: auto !important;
+        text-align: center;
+        font-size: 22px;
+      }
+    }
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      .image-play {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        fill: #fff;
+        .icon-component {
+          width: 80px;
+          height: 80px;
+        }
+      }
+      .image-progressbar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color: var(--progressbar-track-color);
+        box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.3);
+        .bar {
+          height: 100%;
+          background-color: var(--progressbar-thumb-color);
+        }
+      }
+    }
+  }
+}

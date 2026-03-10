@@ -1,0 +1,99 @@
+@use '@/assets/styles/mixins' as *;
+/* ==================================================
+          @popup-layout
+================================================== */
+.popup-component {
+  position: fixed;
+  inset: 0;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+  overflow: auto;
+
+  & > .popup-dimm {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+  }
+
+  & > .popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    max-width: 80%;
+    max-height: calc(100vh - 100px);
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 100;
+
+    @media (min-width: 768px) {
+      max-width: 800px;
+    }
+
+    .popup-header {
+      position: relative;
+      width: 100%;
+      font-size: 46px;
+      font-weight: bold;
+      padding: 60px 0 41px;
+      text-align: center;
+      border-bottom: 1px solid var(--popup-header-border-color);
+      .btn-close {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        padding: 32px;
+        transform: translateY(-50%);
+        stroke: var(--app-font-color);
+        cursor: pointer;
+      }
+    }
+    .popup-contents {
+      flex: 1;
+      overflow: auto;
+    }
+    .popup-footer {
+      width: 100%;
+      .btn-wrap {
+        display: flex;
+        gap: 36px;
+        .btn {
+          flex: 1;
+          font-size: 20px;
+          font-weight: bold;
+          padding: 18px 0;
+          border-radius: 4px;
+          color: #fff;
+          transition: opacity 0.3s;
+          &.btn-confirm {
+            background-color: var(--common-font-color-highlight);
+          }
+          &.btn-cancel {
+            color: #333;
+          }
+          &.disable {
+            opacity: 0.4;
+          }
+          @media (min-width: 768px) {
+            font-size: 28px;
+            padding: 20px 0;
+          }
+        }
+      }
+    }
+  }
+}
+.fullscreen {
+  .popup-component {
+    &.toast {
+      display: none !important;
+    }
+  }
+}

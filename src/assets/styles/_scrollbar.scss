@@ -1,0 +1,126 @@
+@use '@/assets/styles/mixins' as *;
+/* ==================================================
+          @scrollbar
+================================================== */
+.scroll-component {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  height: auto;
+  max-height: 100%;
+  .scroll-inner {
+    display: inherit;
+    flex-direction: inherit;
+    overflow: inherit;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .scroll-container {
+      position: relative;
+      height: 100%;
+      overflow-y: auto;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+  // 스크롤 여부
+  &.has-scroll {
+    // 스크롤 가능할경우 스크롤바 여백 추가
+    .scroll-inner {
+      .scroll-container {
+        padding-right: 36px;
+      }
+    }
+    &::after {
+      opacity: 1; // 초기진입시 때문에
+    }
+    // 스크롤이동상태인지
+    &.scroll-pos-between {
+      .scroll-inner {
+        .scroll-track {
+          opacity: 1;
+        }
+      }
+      .btn-totop {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      &::before,
+      &::after {
+        opacity: 1;
+      }
+    }
+    // 스크롤 끝
+    &.scroll-pos-top {
+      &::before {
+        opacity: 0;
+      }
+      &::after {
+        opacity: 1;
+      }
+    }
+    // 스크롤 끝
+    &.scroll-pos-bottom {
+      .btn-totop {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      &::before {
+        opacity: 1;
+      }
+      &::after {
+        opacity: 0;
+      }
+    }
+  }
+}
+/* ==================================================
+          @scroll-track
+================================================== */
+.scroll-track {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: var(--scroll-track-color);
+  height: calc(100% - 80px);
+  width: 6px;
+  border-radius: 6px;
+  transition: opacity 0.4s;
+  opacity: 0;
+  z-index: 110;
+  .scroll-bar {
+    position: absolute;
+    width: 100%;
+    background-color: var(--scroll-thumb-color);
+    border-radius: 6px;
+    transition: height 0.3s ease;
+  }
+}
+/* ==================================================
+          @scroll-dimm
+================================================== */
+.scroll-dimm {
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+    z-index: 100;
+  }
+  &::before {
+    top: 0;
+    background-image: linear-gradient(to top, transparent, var(--app-bg-color));
+  }
+  &::after {
+    bottom: 0;
+    background-image: linear-gradient(to bottom, transparent, var(--app-bg-color));
+  }
+}

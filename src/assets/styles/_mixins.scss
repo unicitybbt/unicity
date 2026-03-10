@@ -1,0 +1,16 @@
+@mixin ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: keep-all;
+}
+@mixin line-ellipsis($line-cnt) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line-cnt;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: keep-all;
+  white-space: normal;
+}
