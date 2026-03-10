@@ -119,7 +119,7 @@ const q12Data = ref([{ title:' slide1 ',image :q12_1},{title:' slide2 ',image :q
           </li>
           <li>
             <div class="op-name">위치</div>
-            <div class="op-value"><a href="https://maps.app.goo.gl/swoaLBR9xHJKAbR67" target="_blank" class="btn-link">구글맵 바로가기</a></div>
+            <div class="op-value"><a href="https://maps.app.goo.gl/q5XrXHFwtHiLTDmJ9" target="_blank" class="btn-link">구글맵 바로가기</a></div>
           </li>
         </ul>
       </div>
