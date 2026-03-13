@@ -67,8 +67,8 @@
                   항공편명
                 </div>
                 <ul class="list-dot">
-                  <li>대한항공 출국편 <strong>KE 765</strong>, 귀국편 <strong>KE766</strong></li>
-                  <li>아시아나 출국편 <strong>OZ174</strong>, 귀국편 <strong>OZ173</strong></li>
+                  <li>유니팀(아시아나) 출국편 <strong>OZ174</strong>, 귀국편 <strong>OZ173</strong></li>
+                  <li>시티팀(대한항공) 출국편 <strong>KE 765</strong>, 귀국편 <strong>KE766</strong></li>
                 </ul>
               </div>
             </div>

@@ -75,7 +75,7 @@ import icKakao from '@images/ic-kakao.png';
             </div>
           </div>
           <div class="h-col h-col-12 h-col-md-3">
-            <ImageComponent :src="img1" />
+            <ImageComponent :src="img1" :aspect-ratio="'auto'" />
           </div>
         </div>
       </div>
@@ -171,10 +171,10 @@ import icKakao from '@images/ic-kakao.png';
               </p>
             </div>
             <div class="box-wrap box-kakao">
-              <p class="box-content">
+              <a href="http://pf.kakao.com/_xoxkMxon" class="box-content" target="_blank">
                 <img :src="icKakao" alt="카카오톡" class="icon-kakao" />
                 카카오톡에서 <strong>유니시티 리더십트립 삿포로</strong>를 친구추가 하세요.
-              </p>
+              </a>
             </div>
           </div>
         </div>

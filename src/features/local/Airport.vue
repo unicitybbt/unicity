@@ -70,7 +70,7 @@ import qrCode from '@images/local/airport/qr.png';
                 <ImageComponent :src="step3" class="step-thumb" />
               </div>
               <div class="h-col h-col-4 h-col-md-2">
-                <ImageComponent :src="qrCode" :alt="'sample'" class="step-thumb" />
+                <ImageComponent :src="qrCode" :alt="'sample'" :aspect-ratio="'auto'" class="step-thumb" />
               </div>
               <div class="h-col h-col-12 h-col-md-6">
                 <p class="step-text">키오스크에 여권 스캔 및 QR 스캔 후 출구로 이동하여 나갑니다.</p>

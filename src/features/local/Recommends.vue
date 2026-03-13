@@ -119,7 +119,7 @@ const q12Data = ref([{ title:' slide1 ',image :q12_1},{title:' slide2 ',image :q
           </li>
           <li>
             <div class="op-name">위치</div>
-            <div class="op-value"><a href="https://maps.app.goo.gl/q5XrXHFwtHiLTDmJ9" target="_blank" class="btn-link">구글맵 바로가기</a></div>
+            <div class="op-value"><a href="https://maps.app.goo.gl/XgeDWGJgXENcMgv47" target="_blank" class="btn-link">구글맵 바로가기</a></div>
           </li>
         </ul>
       </div>
@@ -426,7 +426,7 @@ const q12Data = ref([{ title:' slide1 ',image :q12_1},{title:' slide2 ',image :q
       </div>
     </div>
 
-    <div class="shop-notice">
+    <!-- <div class="shop-notice">
       <div class="notice-header">
         <div class="category-badge">여행지 정보</div>
         <h3 class="notice-title">
@@ -497,7 +497,7 @@ const q12Data = ref([{ title:' slide1 ',image :q12_1},{title:' slide2 ',image :q
           <li>온라인 예약이 마감된 경우, <strong>전화 예약</strong>은 가능한 매장이 있습니다.</li>
         </ul>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <style lang="scss" scoped>
